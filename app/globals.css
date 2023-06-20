@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --primary-color: #34A0A4;
+  --secondary-color: #1A759F;
+  --background-color: #FFF5EB;
+  --body-text-color: #000;
+  --secondary-btn-bg: #fff;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +26,142 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+.reservations {
+  background-color: var(--background-color);
+  height: 135px;
+}
+
+.icons {
+  color: var(--secondary-color);
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 50px;
+  padding: .7rem 1rem;
+}
+
+.secondary-btn {
+  background-color: var(--secondary-btn-bg);
+  color: var(--primary-color);
+  border-radius: 50px;
+  padding: .7rem 1rem;
+}
+
+.primary-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.secondary-btn:hover {
+  background-color: var(--secondary-color);
+  color:#fff;
+}
+
+.bg-gardient-to-bottom {
+  background: linear-gradient(to top, #fff 0%, var(--background-color) 100%);
+}
+
+.abitaciones {
+  background: linear-gradient(to top, var(--background-color) 0%, #fff 100%);
+}
+
+.navbar.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  transition: all 150ms ease-in-out 150ms;
+}
+
+ul a {
+  cursor: pointer;
+}
+
+a.logo {
+  cursor: pointer;
+}
+
+.footer {
+  background-color: var(--background-color);
+}
+
+.close {
+  background-color: var(--primary-color);
+}
+
+/* Media Query */
+@media only screen and (max-width:768px) {
+  .reservations {
+    height: 245px;
+  }
+
+  .res-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar {
+    padding-left: 1rem;
+  }
+
+  .navbar .logo {
+    font-size: 24px;
+  }
+
+  .events {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+
+  .rooms {
+    flex-direction: column;
+  }
+
+  .room {
+    width: 100%;
+  }
+
+  .footer-content {
+    justify-content: space-around;
+  }
+
+  .copyright {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cta img {
+    object-fit: cover;
+  }
+
+  .cta-content .title {
+    text-align: center;
+  }
+
+  .header-content {
+    bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .header-title {
+    height: 50px;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .hero-banner {
+    height: 300px;
+  }
+
+  .hero-banner img {
+    object-fit:cover;
+    height: inherit;
+  }
+
+  .menu {
+    flex-direction: column;
+    background-color: var(--primary-color);
+  }
 }
