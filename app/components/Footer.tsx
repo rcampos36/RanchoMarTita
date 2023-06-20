@@ -2,7 +2,7 @@
 
 import { Belleza } from 'next/font/google';
 import { Link } from 'react-scroll';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 
@@ -19,9 +19,9 @@ const Footer = () => {
         }
     }
 
-    if (typeof window !== "undefined") {
+    useEffect(() => {
         window.addEventListener('scroll', changeBackground);
-    }
+    })
     return ( 
         <div className="footer">
             <div className='footer-content flex items-center max-w-[1080px] w-full mx-auto justify-between pb-10'>
