@@ -19,7 +19,9 @@ const Footer = () => {
         }
     }
 
-    window.addEventListener('scroll', changeBackground);
+    if (typeof window !== "undefined") {
+        window.addEventListener('scroll', changeBackground);
+    }
     return ( 
         <div className="footer">
             <div className='footer-content flex items-center max-w-[1080px] w-full mx-auto justify-between pb-10'>
